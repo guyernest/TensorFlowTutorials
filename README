@@ -1,1 +1,3 @@
 This is a notebook tutorial for TensorFlow (mainly thorugh Keras) on MNIST data
+
+You will go through building a simple fully connected (dense - DNN) network, then improve it using convolution (CNN), and then you will explore RNN (LSTM) for the same problem
