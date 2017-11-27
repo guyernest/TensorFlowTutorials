@@ -16,18 +16,18 @@ Deep Learning AMI with **Conda-based** virtual environments for Apache MXNet, Te
 
 Make sure that you have the **keypair** you are using or download the new one that you created
 
-Connecting to the instance and opening an SSH tunnel for Jupyter:
+Connecting to the instance and opening an SSH tunnel for Jupyter (Ubuntu or Amazon Linux):
 
-ssh -i user.pem -L 8888:localhost:8888 ubuntu@ec2-ip-ip-ip-ip.region.compute.amazonaws.com
+ssh -i user.pem -L 8888:localhost:8888 **ubuntu**@ec2-ip-ip-ip-ip.region.compute.amazonaws.com
 
-ssh -i user.pem -L 8888:localhost:8888 ec2-user@ec2-ip-ip-ip-ip.region.compute.amazonaws.com
+ssh -i user.pem -L 8888:localhost:8888 **ec2-user**@ec2-ip-ip-ip-ip.region.compute.amazonaws.com
 
 ### TensorBoard 
 
-Opening SSH tunnel for TensorBoard:
+Opening SSH tunnel for TensorBoard (Ubuntu or Amazon Linux):
 
-ssh -i user.pem -L 6006:localhost:6006 ubuntu@ec2-ip-ip-ip-ip.region.compute.amazonaws.com
+ssh -i user.pem -L 6006:localhost:6006 **ubuntu**@ec2-ip-ip-ip-ip.region.compute.amazonaws.com
 
-ssh -i user.pem -L 6006:localhost:6006 ec2-user@ec2-ip-ip-ip-ip.region.compute.amazonaws.com
+ssh -i user.pem -L 6006:localhost:6006 **ec2-user**@ec2-ip-ip-ip-ip.region.compute.amazonaws.com
 
 tensorboard --logdir=~/TensorFlowTutorials/logs/
