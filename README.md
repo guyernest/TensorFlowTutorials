@@ -24,7 +24,11 @@ ssh -i user.pem -L 8888:localhost:8888 **ec2-user**@ec2-ip-ip-ip-ip.region.compu
 
 ### Clone this Notebook
 
-git clone https://github.com/guyernest/TensorFlowTutorials.git
+> git clone https://github.com/guyernest/TensorFlowTutorials.git
+
+### Launch Jupyter
+
+> jupyter notebook
 
 ### TensorBoard 
 
@@ -34,4 +38,4 @@ ssh -i user.pem -L 6006:localhost:6006 **ubuntu**@ec2-ip-ip-ip-ip.region.compute
 
 ssh -i user.pem -L 6006:localhost:6006 **ec2-user**@ec2-ip-ip-ip-ip.region.compute.amazonaws.com
 
-tensorboard --logdir=~/TensorFlowTutorials/logs/
+> tensorboard --logdir=~/TensorFlowTutorials/logs/
