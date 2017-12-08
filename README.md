@@ -16,11 +16,11 @@ Deep Learning AMI with **Conda-based** virtual environments for Apache MXNet, Te
 
 Make sure that you have the **keypair** you are using or download the new one that you created
 
-Connecting to the instance and opening an SSH tunnel for Jupyter (Ubuntu or Amazon Linux):
+Connecting to the instance and opening an SSH tunnel for Jupyter on port 8888 (Ubuntu or Amazon Linux):
 
-ssh -i user.pem -L 8888:localhost:8888 **ubuntu**@ec2-ip-ip-ip-ip.region.compute.amazonaws.com
+ssh -i user.pem -L localhost:8888:localhost:8888 **ubuntu**@ec2-ip-ip-ip-ip.region.compute.amazonaws.com
 
-ssh -i user.pem -L 8888:localhost:8888 **ec2-user**@ec2-ip-ip-ip-ip.region.compute.amazonaws.com
+ssh -i user.pem -L localhost:8888:localhost:8888 **ec2-user**@ec2-ip-ip-ip-ip.region.compute.amazonaws.com
 
 ### Clone this Notebook
 
@@ -32,10 +32,20 @@ ssh -i user.pem -L 8888:localhost:8888 **ec2-user**@ec2-ip-ip-ip-ip.region.compu
 
 ### TensorBoard 
 
-Opening SSH tunnel for TensorBoard (Ubuntu or Amazon Linux):
-
-ssh -i user.pem -L 6006:localhost:6006 **ubuntu**@ec2-ip-ip-ip-ip.region.compute.amazonaws.com
-
-ssh -i user.pem -L 6006:localhost:6006 **ec2-user**@ec2-ip-ip-ip-ip.region.compute.amazonaws.com
+In the jupyter terminal start TensorBoard and point it to the log directory used in the notebook
 
 > tensorboard --logdir=~/TensorFlowTutorials/logs/
+
+#### Using DeepLearning AMI on EC2
+
+Opening SSH tunnel for TensorBoard default port 6006 (Ubuntu or Amazon Linux):
+
+ssh -i user.pem -L localhost:6006:localhost:6006 **ubuntu**@ec2-ip-ip-ip-ip.region.compute.amazonaws.com
+
+ssh -i user.pem -L localhost:6006:localhost:6006 **ec2-user**@ec2-ip-ip-ip-ip.region.compute.amazonaws.com
+
+#### Using Amazon SageMaker
+
+Append the port number after the /proxy/ URL, for example:
+
+https://<NB-NAME>.notebook.<REGION>.sagemaker.aws/proxy/6006/
